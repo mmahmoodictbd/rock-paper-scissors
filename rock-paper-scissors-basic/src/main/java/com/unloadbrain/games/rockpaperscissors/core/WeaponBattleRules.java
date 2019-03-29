@@ -3,11 +3,13 @@ package com.unloadbrain.games.rockpaperscissors.core;
 import java.util.Collection;
 import java.util.Optional;
 
-public abstract class WeaponBattleRules<B> {
+public interface WeaponBattleRules {
 
-    protected Optional<Weapon> findWinnerWeapon(Collection<Weapon> weapons) {
-        return findWinnerWeapon(weapons.toArray(new Weapon[weapons.size()])[0], weapons.toArray(new Weapon[weapons.size()])[1]);
-    }
+    Weapons getAvailableWeapons();
 
-    abstract protected Optional<Weapon> findWinnerWeapon(Weapon weapon1, Weapon weapon2);
+    Optional<Weapon> findWinnerWeapon(Collection<Weapon> weapons);
+
+    void addRule(WhoBeatWhoRule whoBeatWhoRule);
+
+    Collection<WhoBeatWhoRule> getWhoBeatWhoRules();
 }
