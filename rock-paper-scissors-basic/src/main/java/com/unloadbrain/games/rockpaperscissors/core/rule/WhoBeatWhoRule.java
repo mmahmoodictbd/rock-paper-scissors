@@ -1,4 +1,6 @@
-package com.unloadbrain.games.rockpaperscissors.core;
+package com.unloadbrain.games.rockpaperscissors.core.rule;
+
+import com.unloadbrain.games.rockpaperscissors.core.weapon.Weapon;
 
 public class WhoBeatWhoRule {
 

@@ -1,16 +1,14 @@
-package com.unloadbrain.games.rockpaperscissors.basic;
+package com.unloadbrain.games.rockpaperscissors.core.weapon;
 
-import com.unloadbrain.games.rockpaperscissors.core.Weapon;
-import com.unloadbrain.games.rockpaperscissors.core.WeaponBattleRules;
-import com.unloadbrain.games.rockpaperscissors.core.Weapons;
-import com.unloadbrain.games.rockpaperscissors.core.WhoBeatWhoRule;
+import com.unloadbrain.games.rockpaperscissors.core.rule.WeaponBattleRules;
+import com.unloadbrain.games.rockpaperscissors.core.rule.WhoBeatWhoRule;
 
 public class RockPaperScissorsLizardSpockWeapons extends RockPaperScissorsWeapons implements Weapons {
 
     public RockPaperScissorsLizardSpockWeapons() {
 
-        addWeapon(new Weapon("Lizard"));
-        addWeapon(new Weapon("Spock"));
+        addWeapon(new BasicWeapon("Lizard", "LIZARD"));
+        addWeapon(new BasicWeapon("Spock", "SPOCK"));
 
         WeaponBattleRules rules = getWeaponBattleRules();
         rules.addRule(new WhoBeatWhoRule(rules.getAvailableWeapons().get("Rock"), rules.getAvailableWeapons().get("Lizard")));
