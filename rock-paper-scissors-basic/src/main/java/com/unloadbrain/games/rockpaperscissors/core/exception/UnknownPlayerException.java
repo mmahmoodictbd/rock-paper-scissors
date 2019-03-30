@@ -1,4 +1,4 @@
-package com.unloadbrain.games.rockpaperscissors.exception;
+package com.unloadbrain.games.rockpaperscissors.core.exception;
 
 public class UnknownPlayerException extends RuntimeException {
 

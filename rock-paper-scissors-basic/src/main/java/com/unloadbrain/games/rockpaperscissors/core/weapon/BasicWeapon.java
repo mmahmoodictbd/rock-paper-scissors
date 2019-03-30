@@ -1,17 +1,18 @@
-package com.unloadbrain.games.rockpaperscissors.core;
+package com.unloadbrain.games.rockpaperscissors.core.weapon;
 
-public class Weapon {
+public class BasicWeapon implements Weapon, DisplayableWeapon {
 
     private String label;
+    private String symbol;
 
-    public Weapon(String label) {
+    public BasicWeapon(String label, String symbol) {
         this.label = label;
+        this.symbol = symbol;
     }
 
     public String getLabel() {
         return label;
     }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -20,11 +21,11 @@ public class Weapon {
             return true;
         }
 
-        if (!(obj instanceof Weapon)) {
+        if (!(obj instanceof BasicWeapon)) {
             return false;
         }
 
-        Weapon other = (Weapon) obj;
+        BasicWeapon other = (BasicWeapon) obj;
         if (!other.canEqual(this)) {
             return false;
         }
@@ -37,7 +38,7 @@ public class Weapon {
     }
 
     private boolean canEqual(Object other) {
-        return other instanceof Weapon;
+        return other instanceof BasicWeapon;
     }
 
     @Override
@@ -48,5 +49,10 @@ public class Weapon {
     @Override
     public String toString() {
         return label;
+    }
+
+    @Override
+    public String getSymbol() {
+        return symbol;
     }
 }
