@@ -11,7 +11,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>Rock Paper Scissors</name>
-    <description></description>
+    <description>Parent project to Rock Paper Scissors</description>
 
     <scm>
         <url>https://github.com/mmahmoodictbd/rock-paper-scissors</url>
@@ -27,8 +27,7 @@
 
     <modules>
         <module>rock-paper-scissors-core</module>
-        <module>rock-paper-scissors-basic</module>
-        <module>rock-paper-scissors-basic-web</module>
+        <module>rock-paper-scissors-cli-app</module>
     </modules>
 
     <properties>
