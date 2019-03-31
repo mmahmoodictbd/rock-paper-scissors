@@ -6,9 +6,13 @@ import com.unloadbrain.games.rockpaperscissors.core.rule.WhoBeatWhoRule;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Basic Rock paper scissors weapons.
+ */
 public class RockPaperScissorsWeapons implements Weapons {
 
     private final List<Weapon> weapons;
@@ -20,10 +24,6 @@ public class RockPaperScissorsWeapons implements Weapons {
         weapons.add(new BasicWeapon("Paper", "OPEN_HAND"));
         weapons.add(new BasicWeapon("Scissors", "INDEX_MIDDLE_FINGER"));
         weaponBattleRules = new RockPaperScissorsWeaponBattleRules(this);
-    }
-
-    public List<Weapon> getWeapons() {
-        return weapons;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class RockPaperScissorsWeapons implements Weapons {
 
     @Override
     public List<Weapon> getWeaponList() {
-        return weapons;
+        return Collections.unmodifiableList(weapons);
     }
 
     @Override
@@ -74,6 +74,9 @@ public class RockPaperScissorsWeapons implements Weapons {
         return weaponBattleRules.findWinnerWeapon(Arrays.asList(weapon1, weapon2));
     }
 
+    /**
+     * Basic Rock paper scissors weapon battle rules.
+     */
     static class RockPaperScissorsWeaponBattleRules extends AbstractWeaponBattleRules {
 
         private final Weapons weapons;
@@ -81,9 +84,9 @@ public class RockPaperScissorsWeapons implements Weapons {
 
         public RockPaperScissorsWeaponBattleRules(Weapons weapons) {
             this.weapons = weapons;
-            whoBeatWhoRules.add(new WhoBeatWhoRule(weapons.get("Rock"), weapons.get("Scissors")));
-            whoBeatWhoRules.add(new WhoBeatWhoRule(weapons.get("Scissors"), weapons.get("Paper")));
-            whoBeatWhoRules.add(new WhoBeatWhoRule(weapons.get("Paper"), weapons.get("Rock")));
+            addRule(new WhoBeatWhoRule(weapons.get("Rock"), weapons.get("Scissors")));
+            addRule(new WhoBeatWhoRule(weapons.get("Scissors"), weapons.get("Paper")));
+            addRule(new WhoBeatWhoRule(weapons.get("Paper"), weapons.get("Rock")));
         }
 
         @Override
@@ -93,12 +96,13 @@ public class RockPaperScissorsWeapons implements Weapons {
 
         @Override
         public void addRule(WhoBeatWhoRule whoBeatWhoRule) {
+            validateWhoBeatWhoRule(whoBeatWhoRule);
             whoBeatWhoRules.add(whoBeatWhoRule);
         }
 
         @Override
         public List<WhoBeatWhoRule> getWhoBeatWhoRules() {
-            return whoBeatWhoRules;
+            return Collections.unmodifiableList(whoBeatWhoRules);
         }
     }
 

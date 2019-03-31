@@ -8,8 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Provides methods to determine which weapon win.
+ */
 public abstract class AbstractWeaponBattleRules implements WeaponBattleRules {
 
+    /**
+     * Find winner weapon from list of weapons.
+     *
+     * @param List of weapons
+     * @return optional of winner weapon, return empty when there is no winner.
+     */
     public Optional<Weapon> findWinnerWeapon(List<Weapon> weapons) {
 
         if (weapons.isEmpty()) {
@@ -56,6 +65,13 @@ public abstract class AbstractWeaponBattleRules implements WeaponBattleRules {
         return Optional.empty();
     }
 
+    /**
+     * Find winner weapon between two weapon.
+     *
+     * @param weapon1 weapon 1
+     * @param weapon2 weapon 2
+     * @return optional of winner weapon, return empty when there is no winner.
+     */
     protected Optional<Weapon> findWinnerWeapon(Weapon weapon1, Weapon weapon2) {
 
         Weapons availableWeapons = getAvailableWeapons();
@@ -78,6 +94,16 @@ public abstract class AbstractWeaponBattleRules implements WeaponBattleRules {
         }
 
         return Optional.empty();
+    }
+
+    protected void validateWhoBeatWhoRule(WhoBeatWhoRule whoBeatWhoRule){
+
+        Weapons availableWeapons = getAvailableWeapons();
+
+        if (!availableWeapons.isExist(whoBeatWhoRule.getWinner())
+                || !availableWeapons.isExist(whoBeatWhoRule.getLooser())) {
+            throw new UnknownWeaponException("Unknown weapon.");
+        }
     }
 
 }

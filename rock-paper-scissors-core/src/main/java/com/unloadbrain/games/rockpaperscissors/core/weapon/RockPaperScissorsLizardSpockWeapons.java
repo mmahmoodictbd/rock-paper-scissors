@@ -3,6 +3,9 @@ package com.unloadbrain.games.rockpaperscissors.core.weapon;
 import com.unloadbrain.games.rockpaperscissors.core.rule.WeaponBattleRules;
 import com.unloadbrain.games.rockpaperscissors.core.rule.WhoBeatWhoRule;
 
+/**
+ * Exrension of basic game
+ */
 public class RockPaperScissorsLizardSpockWeapons extends RockPaperScissorsWeapons implements Weapons {
 
     public RockPaperScissorsLizardSpockWeapons() {

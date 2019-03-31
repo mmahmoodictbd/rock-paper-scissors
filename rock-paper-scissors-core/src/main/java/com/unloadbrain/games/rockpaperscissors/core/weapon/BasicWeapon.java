@@ -1,5 +1,6 @@
 package com.unloadbrain.games.rockpaperscissors.core.weapon;
 
+
 public class BasicWeapon implements Weapon, DisplayableWeapon {
 
     private String label;
