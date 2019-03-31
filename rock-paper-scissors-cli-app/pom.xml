@@ -11,21 +11,28 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>rock-paper-scissors-core</artifactId>
+    <artifactId>rock-paper-scissors-cli-app</artifactId>
 
-    <name>Rock Paper Scissors Core</name>
-    <description>Provides core APIs to Rock Paper Scissors</description>
+    <name>Rock Paper Scissors CLI</name>
+    <description>Command line interface of Rock Paper Scissors</description>
 
     <properties>
-        <slf4j-api.version>1.7.26</slf4j-api.version>
+        <logback-classic.version>1.2.3</logback-classic.version>
     </properties>
 
     <dependencies>
 
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j-api.version}</version>
+            <groupId>com.unloadbrain.games</groupId>
+            <artifactId>rock-paper-scissors-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-classic.version}</version>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
