@@ -26,16 +26,16 @@ public class HumanPlayer implements Player {
     }
 
     @Override
-    public Weapon getChosenWeapon() {
-
-        if (chosenWeapon == null) {
-            try {
-                chosenWeapon = (Weapon) inputPromptFunction.call();
-            } catch (Exception ex) {
-                throw new RuntimeException("Fatal error.", ex);
-            }
+    public void chooseWeapon() {
+        try {
+            chosenWeapon = (Weapon) inputPromptFunction.call();
+        } catch (Exception ex) {
+            throw new RuntimeException("Fatal error.", ex);
         }
+    }
 
+    @Override
+    public Weapon getChosenWeapon() {
         return chosenWeapon;
     }
 }
