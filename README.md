@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-Play Rock Paper Scissors and Rock Paper Scissors Lizard Spock from your terminal.
+Play **Rock Paper Scissors** and **Rock Paper Scissors Lizard Spock** from your terminal.
 
 ![CLI app screenshot](docs/images/cli-app-screenshot.png)
 
@@ -26,6 +26,35 @@ $ mvn clean compile install
 
 ```
 
+### Development
+##### How to run tests
+
+###### How to run unit tests
+To run the unit tests, execute the following commands
+```
+mvn clean test-compile test
+```
+
+###### How to run integration tests
+To run the integration tests, execute the following commands
+```
+mvn clean test-compile verify -DskipTests=true
+```
+
+###### How to run both unit tests and integration tests
+To run the integration tests, execute the following commands
+```
+mvn clean test-compile verify
+```
+
+###### How to run pitest
+To run the mutation tests, execute the following commands
+```
+mvn clean test-compile test
+mvn org.pitest:pitest-maven:mutationCoverage
+```
+
 ### Improvements to make
-- Add more test cases.
+- Cover more unit tests and ITs cases.
 - Add web module to play on web.
+- Generate and check OWASP report. 
