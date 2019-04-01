@@ -15,6 +15,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
@@ -221,6 +222,20 @@ public class GameTest {
 
         // Then
         assertFalse(game.isFinished());
+    }
+
+    @Test
+    public void shouldReturnId() {
+
+        // Given
+        Weapons weapons = new RockPaperScissorsWeapons();
+        GameEngine engine = new GameEngine(weapons);
+
+        // When
+        Game game = new Game(engine, mock(HumanPlayer.class), mock(HumanPlayer.class));
+
+        // Then
+        assertNotNull(game.getId());
     }
 
 }
