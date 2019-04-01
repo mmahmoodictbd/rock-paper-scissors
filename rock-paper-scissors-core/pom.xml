@@ -8,7 +8,7 @@
     <parent>
         <artifactId>rock-paper-scissors</artifactId>
         <groupId>com.unloadbrain.games</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>rock-paper-scissors-core</artifactId>
