@@ -2,7 +2,7 @@
 
 Play Rock Paper Scissors and Rock Paper Scissors Lizard Spock from your terminal.
 
-![CLI app screenshot](https://raw.githubusercontent.com/mmahmoodictbd/rock-paper-scissors/master/docs/images/cli-app-screenshot.png)
+![CLI app screenshot](docs/images/cli-app-screenshot.png)
 
 ### Features
 - Play with more than two player.
