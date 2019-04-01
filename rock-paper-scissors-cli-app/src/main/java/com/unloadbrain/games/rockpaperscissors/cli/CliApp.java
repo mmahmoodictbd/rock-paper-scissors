@@ -9,7 +9,6 @@ import com.unloadbrain.games.rockpaperscissors.core.weapon.RockPaperScissorsWeap
 import com.unloadbrain.games.rockpaperscissors.core.weapon.Weapon;
 import com.unloadbrain.games.rockpaperscissors.core.weapon.Weapons;
 
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -34,10 +33,10 @@ public class CliApp {
             Player player2 = new RandomBotPlayer("Computer", weapons);
             Game game = new Game(engine, new HashSet(Arrays.asList(player1, player2)));
 
-            game.play(player1, player1.getChosenWeapon());
+            game.play(player1);
             cliApp.log("You played " + player1.getChosenWeapon());
 
-            game.play(player2, player2.getChosenWeapon());
+            game.play(player2);
             cliApp.log("Computer played " + player2.getChosenWeapon());
 
             if (game.findWinner().isPresent()) {
