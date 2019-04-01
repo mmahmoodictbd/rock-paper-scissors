@@ -6,6 +6,12 @@ public class BasicWeapon implements Weapon, DisplayableWeapon {
     private String label;
     private String symbol;
 
+
+    public BasicWeapon(String label) {
+        this.label = label;
+        this.symbol = label;
+    }
+
     public BasicWeapon(String label, String symbol) {
         this.label = label;
         this.symbol = symbol;
