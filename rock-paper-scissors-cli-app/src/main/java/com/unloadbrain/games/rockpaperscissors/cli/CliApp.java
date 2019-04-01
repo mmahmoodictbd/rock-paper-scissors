@@ -10,8 +10,6 @@ import com.unloadbrain.games.rockpaperscissors.core.weapon.Weapon;
 import com.unloadbrain.games.rockpaperscissors.core.weapon.Weapons;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
 
@@ -31,7 +29,7 @@ public class CliApp {
 
             Player player1 = new HumanPlayer("You!", cliApp.promptHumanPlayerWeaponChoice(scanner, weapons));
             Player player2 = new RandomBotPlayer("Computer", weapons);
-            Game game = new Game(engine, new HashSet(Arrays.asList(player1, player2)));
+            Game game = new Game(engine, player1, player2);
 
             game.play(player1);
             cliApp.log("You played " + player1.getChosenWeapon());

@@ -57,4 +57,5 @@ mvn org.pitest:pitest-maven:mutationCoverage
 ### Improvements to make
 - Cover more unit tests and ITs cases.
 - Add web module to play on web.
-- Generate and check OWASP report. 
+- Generate and check OWASP report.
+- Add logging.
