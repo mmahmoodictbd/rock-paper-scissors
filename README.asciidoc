@@ -4,6 +4,8 @@ Play **Rock Paper Scissors** and **Rock Paper Scissors Lizard Spock** from your 
 
 image::docs/images/cli-app-screenshot.png[CLI app screenshot]
 
+video::iSHPVCBsnLw[youtube, width=640, height=400, start=25, end=140]
+
 image:https://travis-ci.org/mmahmoodictbd/rock-paper-scissors.svg?branch=master["Build Status", link="https://travis-ci.org/mmahmoodictbd/rock-paper-scissors"]
 image:https://codecov.io/gh/mmahmoodictbd/rock-paper-scissors/branch/master/graph/badge.svg["Code Coverage", link="https://codecov.io/gh/mmahmoodictbd/rock-paper-scissors"]
 image:https://img.shields.io/badge/license-MIT-green.svg["LICENSE", link="https://github
