@@ -33,23 +33,12 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <slf4j-api.version>2.0.11</slf4j-api.version>
-        <logback-classic.version>1.4.14</logback-classic.version>
-
         <junit.version>5.10.1</junit.version>
         <mockito-core.version>5.10.0</mockito-core.version>
-
-        <skipTests>false</skipTests>
-        <skip.surefire.tests>${skipTests}</skip.surefire.tests>
-        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
-        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
     </properties>
 
-
     <dependencies>
-
         <!-- Test dependencies -->
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -63,7 +52,6 @@
             <version>${mockito-core.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
 </project>
